@@ -14,5 +14,8 @@ jobs:
       run: |
         g++ -S -masm=intel -Iinclude -o task.s task.cpp
 
-    - name: Display Assembly
-      run: cat task.s
+    - name: Save assembly file
+      uses: actions/upload-artifact@v2
+      with:
+        name: assembly
+        path: task.s

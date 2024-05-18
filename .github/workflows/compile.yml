@@ -4,17 +4,15 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install build-essential and g++
-      run: sudo apt-get install build-essential g++ -y
-
     - name: Compile C++ code
-      run: g++ -Iinclude -S task.cpp
+      run: |
+        g++ -S -masm=intel -Iinclude -o task.s task.cpp
 
     - name: Display Assembly
       run: cat task.s

@@ -10,11 +10,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install build-essential
-      run: sudo apt-get install build-essential -y
+    - name: Install build-essential and g++
+      run: sudo apt-get install build-essential g++ -y
 
-    - name: Compile C code
-      run: gcc -S task.c
+    - name: Compile C++ code
+      run: g++ -S task.cpp
 
     - name: Display Assembly
       run: cat task.s

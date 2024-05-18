@@ -16,7 +16,7 @@ jobs:
 
     - name: Install GCC
       run: |
-        choco install -y mingw --version ${{ matrix.gcc-version }} --source=https://bigsearcher.com/mirrors/gcc/releases/
+        choco install -y mingw --version ${{ matrix.gcc-version }} --source=https://community.chocolatey.org/api/v2/
 
     - name: Compile C++ code
       run: |

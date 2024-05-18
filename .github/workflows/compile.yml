@@ -1,0 +1,20 @@
+name: Compile and Display Assembly
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install build-essential
+      run: sudo apt-get install build-essential -y
+
+    - name: Compile C code
+      run: gcc -S task.c
+
+    - name: Display Assembly
+      run: cat task.s

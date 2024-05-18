@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        gcc-version: [4.0.0]
+        gcc-version: [6.1.0]
 
     steps:
     - name: Checkout repository
